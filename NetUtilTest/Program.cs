@@ -9,7 +9,6 @@ using GMap.NET.MapProviders;
 using GMapProvidersExt;
 using GMapProvidersExt.Tencent;
 using GMapPositionFix;
-using NetUtil;
 
 namespace NetUtilTest
 {
@@ -24,7 +23,7 @@ namespace NetUtilTest
 
         private static void GenerateNewFile()
         {
-            string filePath  = "F:\\ChinaBoundaryBinary";
+            string filePath  = "D:\\GitHome\\learn\\MapDownloader\\MapDownloader\\Resource\\ChinaBoundary";
             Country china = JsonHelper.JsonDeserializeFromFile<Country>(filePath, Encoding.UTF8);
             foreach (var provice in china.Province)
             {
@@ -35,7 +34,7 @@ namespace NetUtilTest
                     break;
                 }
             }
-            JsonHelper.JsonSerializeToBinaryFile(china, "F:\\ChinaBoundary_Province_City");
+            JsonHelper.JsonSerializeToBinaryFile(china, "D:\\GitHome\\learn\\MapDownloader\\MapDownloader\\Resource\\ChinaBoundary_Province_City");
         }
 
         static string GetMapRegionInfo()
